@@ -1,0 +1,129 @@
+// main: ../alt-pay-style.less
+// muli, muli extrabold
+
+/* TYPHOGRAPHY
+=================================================== */
+@font-face {
+    font-family: 'SFCompactDisplay-Regular';
+    src: url('../assets/fonts/SFCompactDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFCompactDisplay-SemiBold';
+    src: url('../assets/fonts/SFCompactDisplay-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Muli-Bold';
+    src: url('../assets/fonts/Muli-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Muli-ExtraBold';
+    src: url('../assets/fonts/Muli-Bold.ttf') format('truetype');
+}
+
+body {
+    color: #19345E;
+    font-family: 'SFCompactDisplay-Regular', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+a {
+    outline: none !important;
+    text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #6D9AE0;
+}
+
+/*--------------------------------------
+ *               Heading               *
+ --------------------------------------*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+h1 {
+    font-family: 'Muli', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+}
+h2 {
+    font-family: 'Muli', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+}
+h3 {
+    font-family: 'Muli', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+h4 {
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+h5 {
+    font-family: 'Muli', sans-serif;
+    font-size: 20px;
+}
+h6 {
+    font-size: 15px;
+}
+p {
+    font-family: 'SFCompactDisplay-Regular', sans-serif;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 14px;
+    color: #7E7E7E;
+    font-weight: 400;
+    &.lead {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+.c-typhography {
+    li {
+        line-height: 35px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {}
+@media (max-width: 991px) {
+    h1 {
+        font-family: 'Muli', sans-serif;
+        font-size: 45px;
+    }
+    h2 {
+        font-family: 'Muli', sans-serif;
+        font-size: 30px;
+    }
+    h3 {
+        font-family: 'Muli-Bold', sans-serif;
+        font-size: 20px;
+    }
+    h4 {
+        font-family: 'Muli-Bold', sans-serif;
+        font-size: 18px;
+    }
+}
+@media (max-width: 767px) {}
+@media (max-width: 575px) {}
