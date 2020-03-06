@@ -11,65 +11,37 @@
 
 ?>
 
-<footer class="c-footer u-bg-colossus">
+<footer class="c-footer u-section">
     <div class="container">
         <div class="row">
-            <div class="c-footer__first col-md-3 col-12 mb-4">
-                <a href="<?php echo home_url( '/' ); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo pdam pintar">
-                </a>
-                <p>Copyright © <?php echo date('Y')?> Alterra</p>
+            <div class="c-footer__first col-md-5 [ u-mb-35@sm ]">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-footer.svg" alt="alterra bill logo">
+                <p>© Alterra. All rights reserved.</p>
+                <ul class="c-footer__link">
+
+                    <li><a href="<?php echo get_field('kebijakan_privacy', 'option')['link'] ?>">
+                        <?php echo get_field('kebijakan_privacy', 'option')['text_title'] 
+                        ? get_field('kebijakan_privacy', 'option')['text_title']
+                        : 'Kebijakan Privasi'  ?>
+                    </a></li>
+                    <li><a href="<?php echo get_field('ketentuan_layanan', 'option')['link'] ?>">
+                        <?php echo get_field('ketentuan_layanan', 'option')['text_title'] 
+                        ? get_field('ketentuan_layanan', 'option')['text_title']
+                        : 'Ketentuan Layanan'  ?>
+                    </a></li>
+                </ul>
             </div>
-            <div class="c-footer__second col-md-3 col-12 mb-4">
-                <h4>Tentang PDAM Pintar</h4>
+            <div class="c-footer__second offset-md-4 col-md-3">
+                <h4>AlterraPay</h4>
                 <ul class="u-list-block c-footer__nav">
                     <?php if (get_field('group_footer_left', 'option')): ?>
                         <?php foreach (get_field('group_footer_left', 'option') as $key => $link): ?>
                             <li><a href="<?php echo $link['link']['title']; ?>"><?php echo $link['link']['title']; ?></a></li>
                         <?php endforeach ?>
                     <?php else: ?>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a href="#">FAQ</a></li>
-                    <?php endif ?>
-                </ul>
-            </div>
-
-            <div class="c-footer__third col-md-2 col-12 mb-4">
-                <h4>Media Sosial</h4>
-                <ul class="u-list-block c-footer__nav">
-                    <?php if (get_field('group_footer_left', 'option')): ?>
-                        <?php foreach (get_field('group_footer_left', 'option') as $key => $link): ?>
-                            <li><a href="<?php echo $link['link']['title']; ?>"><?php echo $link['link']['title']; ?></a></li>
-                        <?php endforeach ?>
-                    <?php else: ?>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    <?php endif ?>
-                </ul>
-            </div>
-
-            <div class="c-footer__forth col-md-4 col-12 mb-4">
-                <h4>Hubungi Kami</h4>
-                <ul class="u-list-block c-footer__nav">
-                    <?php if (get_field('group_footer_left', 'option')): ?>
-                        <?php foreach (get_field('group_footer_left', 'option') as $key => $link): ?>
-                            <li><a href="<?php echo $link['link']['title']; ?>"><?php echo $link['link']['title']; ?></a></li>
-                        <?php endforeach ?>
-                    <?php else: ?>
-                        <li><p class="d-flex align-items-top">
-                            <i class="c-icon c-icon__envelope"></i> 
-                            pdampintar@bsa.id
-                        </p></li>
-                        <li><p class="d-flex align-items-top">
-                            <i class="c-icon c-icon__phone"></i> 
-                            0361-453000
-                        </p></li>
-                        <li><p class="d-flex align-items-top">
-                            <i class="c-icon c-icon__location"></i> 
-                            Jl. Bung Tomo 1 No.5, Pemecutan Kaja<br/> Kec. Denpasar Utara, Kota Denpasar,<br/> Bali 80111
-                        </p></li>
+                        <li><a href="#">Contact</a></li>
                     <?php endif ?>
                 </ul>
             </div>

@@ -12,14 +12,14 @@ get_header();
 ?>
 
 <?php $heading = get_field('heading') ?>
-<section class="c-heading u-section" id="home">
+<section class="c-heading u-section u-mb-50" id="home">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/heading.svg" alt="heading">
             </div>
             <div class="col-md-6">
-                <div class="c-heading__wrapper">
+                <div class="c-heading__wrapper u-mt-50">
                     <h1><?php echo $heading['title'] ?></h1>
                     <p class="lead u-color-primary"><?php echo $heading['description'] ?></p>
                     <?php if ($heading['connect_with_us']): ?>
@@ -111,10 +111,11 @@ get_header();
             </div>
             <div class="col-md-6">
                 <?php foreach ($what['items'] as $key => $item): ?>
-                    <div class="d-flex align-items-start">
-                        <div class="ml-2">
+                    <div class="d-flex align-items-start position-relative">
+                        <div class="u-numbering">0<?php echo $numbering = $key + 1 ?></div>
+                        <div class="u-pl-75">
                             <h4><?php echo $item['title'] ?></h4>
-                            <p class="mt-1 mb-5"><?php echo $item['description'] ?></p>
+                            <p class="mt-1 u-mb-35"><?php echo $item['description'] ?></p>
                         </div>  
                     </div>
                 <?php endforeach ?>
@@ -123,18 +124,186 @@ get_header();
     </div>
 </section>
 
-<?php $connect = get_field('connect_with_us') ?>
-<section class="c-textbg text-center u-bg-lightblue u-section">
+<?php $api = get_field('api') ?>
+<section class="c-card-section u-section" id="api">
     <div class="container">
-        <h2><?php echo $connect['title'] ?></h2>
-        <p class="text-center"><?php echo $connect['content'] ?></p>
-        <?php if ($connect['cta_link']): ?>
-            <a class="c-btn c-btn__primary" href="<?php echo $connect['cta_link'] ?>"><?php echo $connect['cta'] ?></a>
-        <?php else: ?>
-            <button class="c-btn c-btn__primary js-link-contact-us" href=""><?php echo $connect['cta'] ?></button>
-        <?php endif ?>
+        <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $api['title'] ?></h2>
+        <p class="lead u-color-primary text-center u-mb-75 c-card__subtitle"><?php echo $api['description'] ?></p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="c-card c-card--wider c-card--hover">
+                    <div class="c-card__upper">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/api.png" 
+                        srcset="<?php echo get_template_directory_uri() ?>/assets/img/api@2x.png 2x" 
+                        alt="api">
+                        <div class="c-card__head">
+                            <h3><?php echo $api['api']['title'] ?></h3>
+                        </div>
+                    </div>
+                    <div class="c-card__desc">
+                        <p><?php echo $api['api']['description'] ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="c-card c-card--wider c-card--hover">
+                    <div class="c-card__upper">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/nonapi.png" 
+                        srcset="<?php echo get_template_directory_uri() ?>/assets/img/nonapi@2x.png 2x" 
+                        alt="nonapi">
+                        <div class="c-card__head">
+                            <h3><?php echo $api['non_api']['title'] ?></h3>
+                        </div>
+                    </div>
+                    <div class="c-card__desc">
+                        <p><?php echo $api['non_api']['description'] ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+
+<?php $praktik = get_field('praktik_terbaik') ?>
+<section class="c-section c-tab u-section" id="praktik">
+    <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $praktik['title'] ?></h2>
+    <div class="u-mt-75 container">
+        <ul class="c-tab__nav nav nav-tabs" role="tablist">
+            <?php foreach ($praktik['items'] as $key => $item): ?>
+                <li class="c-tab__nav-item nav-item">
+                    <a class="c-tab__nav-link nav-link <?php echo !$key ? 'active' : '' ?>" 
+                        href="#<?php echo title2slug($item['navigation']) ?>" 
+                        role="tab" data-toggle="tab">
+                        <?php echo $item['navigation'] ?>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="c-tab__content tab-content u-pb-75">
+            <?php foreach ($praktik['items'] as $key => $item): ?>
+                <div role="tabpanel" class="c-tab__tab-pane tab-pane fade <?php echo !$key ? 'in active show' : '' ?>" 
+                id="<?php echo title2slug($item['navigation']) ?>">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="c-tab__title"><?php echo $item['title'] ?></div>
+                            <p><?php echo $item['description'] ?></p>
+                            <?php if ($item['cta']) : ?>
+                                <a class="c-btn c-btn__primary mt-3" href="#" class="js-tab-btn" data-btn="<?php echo title2slug($item['navigation']) ?>">
+                                    <?php echo $item['cta'] ?>
+                                </a>
+                            <?php endif ?>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <?php if($item['image']) :  ?>
+                                <div class="position-relative d-inline-block">
+                                    <img src="<?php echo $item['image']['sizes']['bill_praktik'] ?>" 
+                                        srcset="<?php echo $item['image']['url'] ?> 2x" 
+                                        alt="<?php echo $item['image']['alt'] ?>" 
+                                        class="c-tab__image"
+                                        style="">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/doted.svg" 
+                                        alt="doted"
+                                        class="c-tab__doted">
+                                </div>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+</section>
+
+<?php $awards = get_field('awards') ?>
+<section class="c-content u-section u-mb-35" id="awards">
+    <div class="container">
+        <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $awards['title'] ?></h2>
+        <div class="row u-mt-50">
+           
+            <?php foreach ($awards['items'] as $key => $item): ?>
+                <div class="col-md-4">
+                    <div class="c-card-badge text-center">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/medal.svg" 
+                            class="c-card-badge__medal"
+                            alt="medal">
+                        <div>
+                            <img src="<?php echo $item['image']['sizes']['bill_telco'] ?>" 
+                                srcset="<?php echo $item['image']['url'] ?> 2x" 
+                                alt="<?php echo $item['image']['alt'] ?>" 
+                                style="height:62px">
+                            <p class="text-center"><?php echo $item['description'] ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            
+        </div>
+    </div>
+</section>
+
+<?php $testi = get_field('testimonials') ?>
+<section class="c-content u-section u-mb-35 overflow-hidden" id="testi">
+    <div class="container position-relative">
+        
+        <div class="position-relative" style="z-index:1">
+            <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $testi['title'] ?></h2>
+            <p class="lead u-color-primary u-text-clamp mb-3" style="width:565px"><?php echo $why['description'] ?></p>
+        </div>
+        
+        <div class="c-bluewrapper">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/img/text-quotes.svg" 
+            class="c-card-badge__quote"
+            alt="quote">
+            <div class="c-slider__arrow">
+                <a href="" class="c-slider__arrow-prev js-slider-testi-prev">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
+                </a>
+                <a href="" class="c-slider__arrow-next js-slider-testi-next">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
+                </a>
+            </div>
+        </div>
+
+        <div class="js-slider-testi c-slick-testi">
+            <?php foreach ($testi['items'] as $key => $item): ?>
+                <div class="c-card">
+                    <div class="c-card__upper">
+                        <img src="<?php echo $item['image']['sizes']['bill_testi'] ?>" 
+                        srcset="<?php echo $item['image']['url'] ?> 2x" 
+                        alt="<?php echo $item['image']['alt'] ?>" 
+                        class="c-card__image-round">
+
+                        <div class="c-card__head">
+                            <h3><?php echo $item['title'] ?></h3>
+                            <div class="u-color-grey"><?php echo $item['subtitle'] ?></div>
+                        </div>
+                    </div>
+                    <div class="c-card__desc">
+                        <p class="u-color-primary"><?php echo $item['description'] ?></p>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+
+    </div>
+</section>
+
+
+<?php $connect = get_field('connect_us') ?>
+<section class="c-textbg u-bg-lightblue u-section" id="contactus">
+    <div class="container">
+        <h2><?php echo $connect['title'] ?></h2>
+        <p><?php echo $connect['description'] ?></p>
+        <button class="c-btn c-btn__primary js-link-contact-us" href="">
+            Contact Us
+        </button>
+    </div>
+</section>
+
+
 
 <?php  include get_template_directory() . '/template-parts/modal-contactus.php'; ?>
 <?php  include get_template_directory() . '/template-parts/toast-success.php'; ?>
@@ -142,74 +311,18 @@ get_header();
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
 
-        // FULL WIDTH SLIDER
-        $('.js-slider-fullw').slick({
-            dots: true,
+        // TESTI SLIDER
+        $('.js-slider-testi').slick({
+            dots: false,
             infinite: false,
             speed: 300,
-            slidesToShow: 1,
-            nextArrow: $('.js-sliderf-next'),
-            prevArrow: $('.js-sliderf-prev'),
-            appendDots: $('.js-slider-dots')
+            variableWidth: true,
+            slidesToScroll: 1,
+            nextArrow: $('.js-slider-testi-next'),
+            prevArrow: $('.js-slider-testi-prev'),
+            touchThreshold: 20
         });
        
-
-        // TESTIMONIAL SLIDER
-        $('.js-slidert-text').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            infinite: false,
-            speed: 300,
-            asNavFor: '.js-slidert-img'
-        });
-        $('.js-slidert-img').slick({
-            asNavFor: '.js-slidert-text',
-            infinite: false,
-            speed: 300,
-            nextArrow: $('.js-slidert-next'),
-            prevArrow: $('.js-slidert-prev'),
-            cssEase: 'linear'
-
-        });
-
-        $('.js-tabico-for').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: '.js-tabico-nav'
-        });
-        $('.js-tabico-nav').slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            asNavFor: '.js-tabico-for',
-            infinite: true,
-            dots: false,
-            centerMode: true,
-            focusOnSelect: true,
-            arrows: true,
-            nextArrow: $('.js-tabico-arrow-right'),
-            prevArrow: $('.js-tabico-arrow-left'),
-            responsive: [
-                {
-                  breakpoint: 768,
-                  settings: {
-                    variableWidth: true,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                  }
-                }
-            ]
-        });
-
-        // MODAL
-        $(".js-link-contact-us").click(function () {
-            $(".c-modal").toggleClass("c-modal--show");
-        });
-
         // HEADING Lottie
         bodymovin.loadAnimation({
             container: document.querySelector('.js-homepage'), // the dom element that will contain the animation
@@ -217,6 +330,11 @@ get_header();
             loop: true,
             autoplay: true,
             path: altp_burger_data + 'homepage.json'
+        });
+
+        // MODAL
+        $(".js-link-contact-us").click(function () {
+            $(".c-modal").toggleClass("c-modal--show");
         });
 
         // TOAST

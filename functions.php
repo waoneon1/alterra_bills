@@ -145,7 +145,7 @@ function bill_scripts() {
 	wp_enqueue_style( 'bill-altpay-style', get_template_directory_uri() . '/assets/alt-pay-style.css');
 	wp_enqueue_style( 'bill-style', get_stylesheet_uri(), array(), '1.2' );
 
-	wp_enqueue_script( 'bill-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', array(), '1.0', false );
+	wp_enqueue_script( 'bill-jquery', get_template_directory_uri() . '/assets/vendor/jquery.min.js', array(), '1.0', false );
 	wp_enqueue_script( 'bill-lottie', 'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js', array(), '1.0', false );
 	wp_enqueue_script( 'bill-boostrap', get_template_directory_uri() . '/assets/vendor/bootstrap/bootstrap.min.js' );
 	wp_enqueue_script( 'bill-img2svg', get_template_directory_uri() . '/assets/js/img2svg.js', array(), '1.0', true );
@@ -202,9 +202,9 @@ if( function_exists('acf_add_options_page') ) {
  */
 
 function title2slug($string) {
-	$s = str_replace($string, '-', ' ');
-	$s = strtolower($s);
-	$s = strtolower($s);
+	$string = strip_tags($string);
+	$string = strtolower($string);
+	$string = str_replace(' ', '-', $string);
 
-	return $s;
+	return $string;
 }
