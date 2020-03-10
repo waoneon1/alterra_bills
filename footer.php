@@ -49,6 +49,19 @@
     </div>
 </footer>
 
+<script>
+       
+    // HEADING Lottie
+    bodymovin.loadAnimation({
+        container: document.querySelector('.js-homepage'), // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: altp_burger_data + 'homepage.json'
+    });
+
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

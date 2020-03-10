@@ -333,15 +333,6 @@ get_header();
                 }
             ]
         });
-       
-        // HEADING Lottie
-        bodymovin.loadAnimation({
-            container: document.querySelector('.js-homepage'), // the dom element that will contain the animation
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: altp_burger_data + 'homepage.json'
-        });
 
         // MODAL
         $(".js-link-contact-us").click(function () {
