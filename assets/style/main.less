@@ -187,6 +187,12 @@ input[type=number] {
             }
         }
     }
+    .c-slick-testi {
+        width: 100%;
+        .c-card {
+            max-width: 100%;
+        }
+    }
 }
 @media (max-width: 575px) {}
 
@@ -450,6 +456,13 @@ input[type=number] {
         background-color: #EDF6FF;
     }
 }
+@media (max-width: 767px) {
+    .c- {
+        &bluewrapper {
+            display: none;
+        }
+    }
+}
 
 // TAB 
 .c- {
@@ -508,6 +521,50 @@ input[type=number] {
 
         }
         .c-tab &__tab-pane {}
+        
+        @media (max-width: 1199px) {}
+        @media (max-width: 991px) {
+
+        }
+        @media (max-width: 767px) {
+            .c-tab &__nav-item {
+                width: 50%;
+                padding: 0;
+                &:nth-child(1), &:nth-child(3) {
+                    border-right: 3px solid #fff;
+                }
+                &:nth-child(3), &:nth-child(4) {
+                    border-top: 3px solid #fff;
+                }
+            }
+            .c-tab &__nav-link {
+                border-radius: 0;
+                border-bottom: 0;
+                height: 38px;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                position: relative;
+                overflow: hidden;
+            }
+            .c-tab &__title {
+                font-size: 25px;
+            }
+            &__content {
+                padding: 20px 25px;
+                border: #D0E2FF 1px solid;
+                border-radius: 0 0 10px 10px;
+            }
+            .c-tab &__doted {
+                border-radius: 10px;
+                padding: 9px;
+                z-index: -1;
+                position: absolute;
+                bottom: -19px;
+                left: -20px;
+            }
+        }
+        @media (max-width: 575px) {}
     }
 }
 
@@ -664,6 +721,13 @@ input[type=number] {
     }
 }
 @media (max-width: 767px) {
+    .c-card-number__count {
+        right: unset;
+    }
+    .c-card--wider {
+        padding: 25px;
+        min-height: unset;
+    }
     .c-slider-fullw {
         padding-right: 10px;
     }
@@ -674,5 +738,8 @@ input[type=number] {
     .c-slider__arrow {
         right: unset;
     }
+    
+
+
 }
 @media (max-width: 575px) {}

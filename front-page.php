@@ -52,7 +52,7 @@ get_header();
                     </div>
                 <?php endforeach ?>
             </div>
-            <div class="col-md-6 u-pt-75">
+            <div class="col-md-6 u-pt-75 u-pt-10@sm u-pb-50@sm">
                 <img src="<?php echo $why['image']['sizes']['bill_why_choose'] ?>" 
                     srcset="<?php echo $why['image']['url'] ?> 2x" 
                     alt="<?php echo $why['image']['alt'] ?>" 
@@ -107,7 +107,7 @@ get_header();
         <h2 class="text-center space[ u-mb-75 u-mb-10@sm ]"><?php echo $what['title'] ?></h2>
         <div class="row">
             <div class="col-md-6">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/get.svg" alt="what do you get">
+                <img class="u-mb-35@sm u-mt-35@sm" src="<?php echo get_template_directory_uri() ?>/assets/img/get.svg" alt="what do you get">
             </div>
             <div class="col-md-6">
                 <?php foreach ($what['items'] as $key => $item): ?>
@@ -128,7 +128,7 @@ get_header();
 <section class="c-card-section u-section" id="api">
     <div class="container">
         <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $api['title'] ?></h2>
-        <p class="lead u-color-primary text-center u-mb-75 c-card__subtitle"><?php echo $api['description'] ?></p>
+        <p class="lead u-color-primary text-center u-mb-75 u-mb-35@sm c-card__subtitle"><?php echo $api['description'] ?></p>
         <div class="row">
             <div class="col-md-6">
                 <div class="c-card c-card--wider c-card--hover">
@@ -167,8 +167,10 @@ get_header();
 
 <?php $praktik = get_field('praktik_terbaik') ?>
 <section class="c-section c-tab u-section" id="praktik">
-    <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $praktik['title'] ?></h2>
-    <div class="u-mt-75 container">
+    <div class="container">
+        <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $praktik['title'] ?></h2>
+    </div>
+    <div class="u-mt-75 u-mt-35@sm container">
         <ul class="c-tab__nav nav nav-tabs" role="tablist">
             <?php foreach ($praktik['items'] as $key => $item): ?>
                 <li class="c-tab__nav-item nav-item">
@@ -191,7 +193,7 @@ get_header();
                             <div class="c-tab__title"><?php echo $item['title'] ?></div>
                             <p><?php echo $item['description'] ?></p>
                             <?php if ($item['cta']) : ?>
-                                <a class="c-btn c-btn__primary mt-3" href="#" class="js-tab-btn" data-btn="<?php echo title2slug($item['navigation']) ?>">
+                                <a class="c-btn c-btn__primary u-mb-35@sm mt-3" href="#" class="js-tab-btn" data-btn="<?php echo title2slug($item['navigation']) ?>">
                                     <?php echo $item['cta'] ?>
                                 </a>
                             <?php endif ?>
@@ -218,14 +220,14 @@ get_header();
 </section>
 
 <?php $awards = get_field('awards') ?>
-<section class="c-content u-section u-mb-35" id="awards">
+<section class="c-content u-section u-mb-35 u-mb-0@sm" id="awards">
     <div class="container">
-        <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $awards['title'] ?></h2>
+        <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $awards['title'] ?></h2>                    
         <div class="row u-mt-50">
-           
+            <?php $award_count = count($awards['items']) - 1; ?>
             <?php foreach ($awards['items'] as $key => $item): ?>
                 <div class="col-md-4">
-                    <div class="c-card-badge text-center">
+                    <div class="c-card-badge text-center <?php echo $award_count == $key ? '' : 'u-mb-50@sm'?>">
                         <img src="<?php echo get_template_directory_uri() ?>/assets/img/medal.svg" 
                             class="c-card-badge__medal"
                             alt="medal">
@@ -245,12 +247,12 @@ get_header();
 </section>
 
 <?php $testi = get_field('testimonials') ?>
-<section class="c-content u-section u-mb-35 overflow-hidden" id="testi">
+<section class="c-content u-section u-mb-35 u-mb-0@sm overflow-hidden" id="testi">
     <div class="container position-relative">
         
         <div class="position-relative" style="z-index:1">
             <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $testi['title'] ?></h2>
-            <p class="lead u-color-primary u-text-clamp mb-3" style="width:565px"><?php echo $why['description'] ?></p>
+            <p class="lead u-color-primary u-text-clamp mb-3" style="width:100%; max-width:565px"><?php echo $testi['description'] ?></p>
         </div>
         
         <div class="c-bluewrapper">
@@ -266,7 +268,7 @@ get_header();
                 </a>
             </div>
         </div>
-
+        <!-- js-slider-testi  -->
         <div class="js-slider-testi c-slick-testi">
             <?php foreach ($testi['items'] as $key => $item): ?>
                 <div class="c-card">
@@ -296,7 +298,7 @@ get_header();
 <section class="c-textbg u-bg-lightblue u-section" id="contactus">
     <div class="container">
         <h2><?php echo $connect['title'] ?></h2>
-        <p><?php echo $connect['description'] ?></p>
+        <p class="u-color-primary"><?php echo $connect['description'] ?></p>
         <button class="c-btn c-btn__primary js-link-contact-us" href="">
             Contact Us
         </button>
@@ -320,7 +322,16 @@ get_header();
             slidesToScroll: 1,
             nextArrow: $('.js-slider-testi-next'),
             prevArrow: $('.js-slider-testi-prev'),
-            touchThreshold: 20
+            touchThreshold: 20,
+            responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    variableWidth: false,
+                    slidesToShow: 1,
+                  }
+                }
+            ]
         });
        
         // HEADING Lottie
