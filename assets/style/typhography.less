@@ -98,12 +98,54 @@ p {
     }
 }
 .c-typhography {
+    font-family: 'SFCompactDisplay', sans-serif;
+    color: #4B4B4B;
     li {
         line-height: 35px;
     }
-
     img {
         width: 100%;
+    }
+    h4 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+    p {
+        font-size: 18px;
+        line-height: 2em;
+        margin-bottom: 35px;
+    }
+    p.lead {
+        font-size: 24px;
+        line-height: 1.2em;
+    }
+    img {
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        font-family: 'Muli', sans-serif;
+    }
+    ol, 
+    ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 15px;
+        margin-bottom: 35px;
+    }
+
+    ol li, 
+    ul li {
+        line-height: 2em;
+        font-family: 'SFCompactDisplay', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
     }
 }
 
@@ -126,5 +168,28 @@ p {
         font-size: 18px;
     }
 }
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .typhography {
+        .single-header h2, 
+        .minds-header h2, 
+        .archive-header h2 {
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 26px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 23px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        h5 {
+            font-size: 21px;
+        }
+    }
+}
 @media (max-width: 575px) {}

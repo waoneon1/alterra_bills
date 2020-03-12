@@ -19,11 +19,11 @@ get_header();
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/heading.svg" alt="heading">
             </div>
             <div class="col-md-6">
-                <div class="c-heading__wrapper u-mt-50">
+                <div class="c-heading__wrapper u-mt-50 js-scrollto">
                     <h1><?php echo $heading['title'] ?></h1>
                     <p class="lead u-color-primary"><?php echo $heading['description'] ?></p>
                     <?php if ($heading['connect_with_us']): ?>
-                        <a class="c-btn c-btn__primary" href="<?php echo $heading['connect_with_us'] ?>">
+                        <a class="c-btn c-btn__primary" href="#start">
                             Connect with Us
                         </a>
                     <?php endif ?>
@@ -66,18 +66,19 @@ get_header();
 <section class="c-content u-section" id="telco">
     <div class="container">
         <h2 class="text-center space[ u-mb-35 u-mb-10@sm ]"><?php echo $telco['title'] ?></h2>
-        <ul class="u-pt-60 c-imgcol text-center">
+        <ul class="u-pt-60 c-imgcol text-center js-imgcol">
             <?php foreach ($telco['items'] as $key => $item): ?>
                 <li class="c-imgcol__li"><img src="<?php echo $item['image']['url'] ?>" alt="" class="u-retina"></li>
             <?php endforeach ?>
         </ul>
-
-        <div class="u-divider"></div>
+        <div class="text-center">
+            <a class="c-btn c-btn__primary--outline js-imgcol-btn" href="">Show More</a>
+        </div>
     </div>
 </section>
 
 <?php $start = get_field('start_alterra_bills') ?>
-<section class="c-content u-section c-card-number" id="start">
+<section class="c-content u-section c-card-number u-bg-lightblue" id="start">
     <div class="container">
         <h2 class="text-center space[ u-mb-75 u-mb-10@sm ]"><?php echo $start['title'] ?></h2>
         <div class="row">
@@ -222,7 +223,7 @@ get_header();
 <?php $awards = get_field('awards') ?>
 <section class="c-content u-section u-mb-35 u-mb-0@sm" id="awards">
     <div class="container">
-        <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $awards['title'] ?></h2>                    
+        <h2 class="space[ u-mb-25 u-mb-10@sm ] text-center"><?php echo $awards['title'] ?></h2>                    
         <div class="row u-mt-50">
             <?php $award_count = count($awards['items']) - 1; ?>
             <?php foreach ($awards['items'] as $key => $item): ?>
@@ -295,13 +296,22 @@ get_header();
 
 
 <?php $connect = get_field('connect_us') ?>
-<section class="c-textbg u-bg-lightblue u-section" id="contactus">
+<section class="c-textbg u-bg-lightblue u-section pb-0" id="contactus">
     <div class="container">
-        <h2><?php echo $connect['title'] ?></h2>
-        <p class="u-color-primary"><?php echo $connect['description'] ?></p>
-        <button class="c-btn c-btn__primary js-link-contact-us" href="">
-            Contact Us
-        </button>
+       <div class="row">
+            <div class="col-md-6 col-12 u-pb-25">
+                <h2><?php echo $connect['title'] ?></h2>
+                <p class="u-color-primary"><?php echo $connect['description'] ?></p>
+                <button class="c-btn c-btn__primary js-link-contact-us" href="">
+                    Contact Us
+                </button>
+            </div>
+            <div class="col-md-6 col-12 position-relative">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/img/contactus.svg" 
+                alt="contact us"
+                style="position: absolute; bottom: 0;">
+            </div>
+       </div>
     </div>
 </section>
 
@@ -332,6 +342,12 @@ get_header();
                   }
                 }
             ]
+        });
+
+        // telco agregator
+        $('.js-imgcol-btn').click(function (e) {
+            e.preventDefault();
+            $('.js-imgcol').toggleClass('is_active')
         });
 
         // MODAL

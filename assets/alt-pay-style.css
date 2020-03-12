@@ -77,6 +77,10 @@ input[type=number] {
   background-color: #FFF;
   border: 1px #F47522 solid;
   color: #F47522 !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .c-btn__primary--outline:hover {
   background-color: #F47522;
@@ -144,6 +148,21 @@ input[type=number] {
 }
 .c-content__desc {
   margin-top: 25px;
+}
+.c-imgcol {
+  max-height: 135px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.c-imgcol.is_active {
+  max-height: 1000px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .c-imgcol__li {
   padding: 20px 8px;
@@ -239,6 +258,7 @@ input[type=number] {
   box-shadow: 0 15px 30px 0 rgba(115, 151, 252, 0.16);
 }
 .c-card-number__wrapper {
+  background-color: #fff;
   border-radius: 5px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -777,11 +797,55 @@ p.lead {
   font-size: 20px;
   font-weight: 400;
 }
+.c-typhography {
+  font-family: 'SFCompactDisplay', sans-serif;
+  color: #4B4B4B;
+}
 .c-typhography li {
   line-height: 35px;
 }
 .c-typhography img {
   width: 100%;
+}
+.c-typhography h4 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.c-typhography p {
+  font-size: 18px;
+  line-height: 2em;
+  margin-bottom: 35px;
+}
+.c-typhography p.lead {
+  font-size: 24px;
+  line-height: 1.2em;
+}
+.c-typhography img {
+  max-width: 100%;
+  margin-bottom: 35px;
+}
+.c-typhography h1,
+.c-typhography h2,
+.c-typhography h3,
+.c-typhography h4,
+.c-typhography h5,
+.c-typhography h6 {
+  font-weight: 700;
+  font-family: 'Muli', sans-serif;
+}
+.c-typhography ol,
+.c-typhography ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  margin-bottom: 35px;
+}
+.c-typhography ol li,
+.c-typhography ul li {
+  line-height: 2em;
+  font-family: 'SFCompactDisplay', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 @media (max-width: 991px) {
   h1 {
@@ -799,6 +863,28 @@ p.lead {
   h4 {
     font-family: 'Muli-Bold', sans-serif;
     font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .typhography .single-header h2,
+  .typhography .minds-header h2,
+  .typhography .archive-header h2 {
+    font-size: 24px;
+  }
+  .typhography h1 {
+    font-size: 26px;
+  }
+  .typhography h2 {
+    font-size: 24px;
+  }
+  .typhography h3 {
+    font-size: 23px;
+  }
+  .typhography h4 {
+    font-size: 22px;
+  }
+  .typhography h5 {
+    font-size: 21px;
   }
 }
 /* Color
@@ -1338,9 +1424,12 @@ p.lead {
 }
 .c-footer p {
   font-size: 12px;
+  color: #fff;
 }
 .c-footer a {
   font-size: 14px;
+  color: #fff;
+  text-decoration: underline;
 }
 .c-footer__nav li {
   padding: 7px 0;
