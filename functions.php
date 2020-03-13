@@ -95,6 +95,7 @@ if ( ! function_exists( 'bill_add_image_size' ) ) :
 		add_image_size( 'bill_praktik', 385, 270, true );
 		add_image_size( 'bill_telco', 202, 88, true );
 		add_image_size( 'bill_testi', 101, 101, true );
+		add_image_size( 'bill_testi@2x', 202, 202, true );
 	}
 
 endif;

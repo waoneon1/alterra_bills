@@ -84,7 +84,7 @@ get_header();
         <div class="row">
             <?php foreach ($start['items'] as $key => $item): ?>
                 <div class="col-md-4">
-                    <div class="c-card-number__wrapper position-relative d-flex align-items-end text-center p-4" style="height: 370px;">
+                    <div class="c-card-number__wrapper position-relative d-flex align-items-end text-center p-4 mb-4" style="height: 370px;">
                         <div class="c-card-number__count"><?php echo $count = $key + 1 ?></div>
                         <div>
                             <img src="<?php echo get_template_directory_uri() . '/assets/img/easy' . $key . '.svg'?>" 
@@ -99,6 +99,13 @@ get_header();
                 </div>
             <?php endforeach ?>
         </div>
+        <?php if($start['button']) : ?>
+           <div class="text-center">
+                <a  href="<?php echo $start['button']['url'] ?>" class="c-btn c-btn__primary">
+                    <?php echo $start['button']['text'] ?>
+                </a>
+           </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -312,7 +319,7 @@ get_header();
                     Contact Us
                 </button>
             </div>
-            <div class="col-md-6 col-12 position-relative">
+            <div class="col-md-6 col-12 position-relative d-none d-md-block">
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/contactus.svg" 
                 alt="contact us"
                 style="position: absolute; bottom: 0;">
@@ -353,7 +360,13 @@ get_header();
         // telco agregator
         $('.js-imgcol-btn').click(function (e) {
             e.preventDefault();
-            $('.js-imgcol').toggleClass('is_active')
+            $('.js-imgcol').toggleClass('is_active');
+            var btn = $(this).text();
+            if (btn == 'Show More') {
+                $(this).text('Show Less');
+            } else {
+                $(this).text('Show More');
+            }
         });
 
         // MODAL

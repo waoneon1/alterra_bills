@@ -476,8 +476,13 @@ input[type=number] {
   border: 0;
 }
 .c-tab .c-tab__nav-item {
-  width: 25%;
   padding: 0 7px;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
 }
 .c-tab .c-tab__nav-item:first-child {
   padding-left: 0;
@@ -489,6 +494,8 @@ input[type=number] {
   font-family: 'Muli', sans-serif;
   font-size: 16px;
   font-weight: 700;
+  height: 37px;
+  overflow: hidden;
   border-radius: 20px 20px 0 0;
   border: 0;
   background-color: #F3F7FC;
@@ -524,16 +531,15 @@ input[type=number] {
 }
 @media (max-width: 767px) {
   .c-tab .c-tab__nav-item {
-    width: 50%;
+    width: 100%;
     padding: 0;
-  }
-  .c-tab .c-tab__nav-item:nth-child(1),
-  .c-tab .c-tab__nav-item:nth-child(3) {
-    border-right: 3px solid #fff;
-  }
-  .c-tab .c-tab__nav-item:nth-child(3),
-  .c-tab .c-tab__nav-item:nth-child(4) {
     border-top: 3px solid #fff;
+    -ms-flex-preferred-size: unset;
+    flex-basis: unset;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
   }
   .c-tab .c-tab__nav-link {
     border-radius: 0;
