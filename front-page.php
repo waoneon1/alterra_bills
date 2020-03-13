@@ -129,7 +129,9 @@ get_header();
 <section class="c-card-section u-section" id="api">
     <div class="container">
         <h2 class="text-center space[ u-mb-25 u-mb-10@sm ]"><?php echo $api['title'] ?></h2>
-        <p class="lead u-color-primary text-center u-mb-75 u-mb-35@sm c-card__subtitle"><?php echo $api['description'] ?></p>
+        <?php if($api['description']) : ?>
+            <p class="lead u-color-primary text-center u-mb-75 u-mb-35@sm c-card__subtitle"><?php echo $api['description'] ?></p>
+        <?php endif; ?>
         <div class="row">
             <div class="col-md-6">
                 <div class="c-card c-card--wider c-card--hover">
@@ -253,7 +255,9 @@ get_header();
         
         <div class="position-relative" style="z-index:1">
             <h2 class="space[ u-mb-25 u-mb-10@sm ]"><?php echo $testi['title'] ?></h2>
-            <p class="lead u-color-primary u-text-clamp mb-3" style="width:100%; max-width:565px"><?php echo $testi['description'] ?></p>
+            <?php if($testi['description']) : ?>
+                <p class="lead u-color-primary u-text-clamp mb-3" style="width:100%; max-width:565px"><?php echo $testi['description'] ?></p>
+            <?php endif; ?>
         </div>
         
         <div class="c-bluewrapper">
@@ -301,7 +305,9 @@ get_header();
        <div class="row">
             <div class="col-md-6 col-12 u-pb-25">
                 <h2><?php echo $connect['title'] ?></h2>
-                <p class="u-color-primary"><?php echo $connect['description'] ?></p>
+                <?php if($connect['description']) : ?>
+                    <p class="u-color-primary"><?php echo $connect['description'] ?></p>
+                <?php endif; ?>
                 <button class="c-btn c-btn__primary js-link-contact-us" href="">
                     Contact Us
                 </button>
