@@ -21,35 +21,28 @@
 </head>
 
 <body <?php body_class(); ?>>
-<nav class="c-header__menu js-mobile-menu">
-    <ul class="js-scrollto">
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#start">How To Start</a></li>
-        <li><a href="#contactus">Contact Us</a></li>
-    </ul>
-</nav>
 <header class="c-header">
     <div class="container">
         <div class="c-header__dekstop">
             <div class="c-header__logo">
                 <a href="<?php echo home_url( '/' ); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo pdam pintar">
+                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="alterra bills logo">
                 </a>
             </div>
             <div class="c-header__nav">
-                <ul class="js-scrollto">
-                    <li><a href="#why">Why Us</a></li>
-                    <li><a href="#start">How To Start</a></li>
-                    <li><a href="#contactus">Contact Us</a></li>
-                </ul>
             </div>
         </div>
         <div class="c-header__mobile">
             <div class="c-header__wrapper" id="js-sidebar-trigger-effects">
+                <button data-effect="js-sidebar-effect" class="c-header__burger js-burger-menu"></button>
                 <div class="c-header__logo">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="logo pdam pintar">
+                    <a href="<?php echo home_url( '/' ); ?>">
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="alterra bills logo">
+                    </a>
                 </div>
-                <button data-effect="js-sidebar-effect" class="c-header__burger js-burger-menu ml-auto"></button>
+            </div>
+            <div class="c-header__right">
+                
             </div>
         </div>
     </div>

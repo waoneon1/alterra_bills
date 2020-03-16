@@ -10,50 +10,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<header class="c-single-page d-flex align-items-center">
+	    <div class="container">
+	        <div class="c-single-page__txt float-md-right">
+	            <?php the_title( '<h2>', '</h2>' ); ?>
+	            <!-- <p>Digital Infrastructure </p> -->
+	        </div>
+	    </div>
+	</header>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				bill_posted_on();
-				bill_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	<div class="c-single-page__wrapper aboutus-wrapper" style="margin-top: 50px;">
 
-	<?php bill_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bill' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bill' ),
-			'after'  => '</div>',
-		) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php bill_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+        <!-- About Alterra -->
+        <div class="c-single-page__content d-md-flex align-items-md-center" data-aos="fade-up">
+            <div class="container clearfix">
+				<div class="c-typhography">
+					<?php the_content() ?>
+				</div>
+            </div>
+        </div>
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->
