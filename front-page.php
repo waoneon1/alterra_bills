@@ -21,7 +21,9 @@ get_header();
             <div class="col-md-6">
                 <div class="c-heading__wrapper u-mt-50 js-scrollto">
                     <h1><?php echo $heading['title'] ?></h1>
-                    <p class="lead u-color-primary"><?php echo $heading['description'] ?></p>
+                    <?php if($heading['description']) : ?>
+                        <p class="lead u-color-primary"><?php echo $heading['description'] ?></p>
+                    <?php endif; ?>
                     <?php if ($heading['connect_with_us']): ?>
                         <a class="c-btn c-btn__primary" href="#start">
                             Connect with Us
@@ -39,7 +41,9 @@ get_header();
         <div class="row">
             <div class="col-md-6 pr-5">
                 <h2><?php echo $why['title'] ?></h2>
-                <p class="lead u-color-primary u-text-clamp mb-5"><?php echo $why['description'] ?></p>
+                <?php if($why['description']) : ?>
+                    <p class="lead u-color-primary u-text-clamp mb-5"><?php echo $why['description'] ?></p>
+                <?php endif; ?>
                 <?php foreach ($why['items'] as $key => $item): ?>
                     <div class="d-flex align-items-start">
                         <img src="<?php echo get_template_directory_uri() . '/assets/img/' . $item['image'] . '.svg'?>" 
@@ -296,7 +300,7 @@ get_header();
                         </div>
                     </div>
                     <div class="c-card__desc">
-                        <p class="u-color-primary"><?php echo $item['description'] ?></p>
+                        <p class="u-color-primary c-testi"><?php echo $item['description'] ?></p>
                     </div>
                 </div>
             <?php endforeach ?>

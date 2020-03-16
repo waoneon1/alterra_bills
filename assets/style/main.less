@@ -130,7 +130,18 @@ input[type=number] {
         p { font-size: 20px }
     }
     &content {
-        p { font-size: 16px }
+        p { 
+            font-size: 16px;
+        }
+        p.c-testi { 
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            height: 145px;
+            font-size: 20px;
+            line-height: 30px;
+            overflow: hidden;
+        }
         &__items {
             padding-top: 35px;
             padding-bottom: 35px;
@@ -169,14 +180,14 @@ input[type=number] {
     width: 120%;
     /* the slides */
     .slick-slide {
-        margin: 20px;
+        margin: 26px;
     }
     /* the parent */
     .slick-list {
-        margin: -20px;
+        margin: -6px;
     }
     .c-card {
-        max-width: 620px;
+        max-width: 632px;
     }
 }
 
@@ -222,6 +233,7 @@ input[type=number] {
             margin-bottom: 15px;
             min-height: 430px;
             width: 100%;
+            height: 100%;
             max-width: 500px;
         }
         &__upper {
@@ -234,6 +246,7 @@ input[type=number] {
                 width: 101px;
                 height: 101px;
                 border-radius: 50%;
+                margin-bottom: 10px;
             }
         }
         &__subtitle {
@@ -242,14 +255,14 @@ input[type=number] {
             margin: auto;
         }
         &__head {
-            margin-left: 25px;
+            margin-left: 49px;
             h3 {
-                margin-bottom: 0;
+                margin-bottom: 10px;
             }
         }
         &__desc {
             margin-top: 15px;
-            min-height: 150px;
+            min-height: 206px;
         }
         &--hover {
             .transition(all);
@@ -269,18 +282,18 @@ input[type=number] {
         &__title {
             .transition(all);
         }
-        &__wrapper:hover {
-            -webkit-box-shadow: 0 0 16px 0 rgba(109, 154, 224, 0.27);
-            box-shadow: 0 0 16px 0 rgba(109, 154, 224, 0.27);
-        }
-        &__wrapper:hover &  {
-            &__title { 
-                font-weight: 700;
-            }
-            &__count {
-                background-color: #F47522;
-            }
-        }
+        // &__wrapper:hover {
+        //     -webkit-box-shadow: 0 0 16px 0 rgba(109, 154, 224, 0.27);
+        //     box-shadow: 0 0 16px 0 rgba(109, 154, 224, 0.27);
+        // }
+        // &__wrapper:hover &  {
+        //     &__title { 
+        //         font-weight: 700;
+        //     }
+        //     &__count {
+        //         background-color: #F47522;
+        //     }
+        // }
         &__count {
             color: #ffffff;
             font-size: 14px;
@@ -302,6 +315,7 @@ input[type=number] {
     &card-badge {
         border: 1px solid #D0E2FF ;
         border-radius: 4px;
+        height: 100%;
         min-height: 200px;
         padding: 30px 30px 15px 30px;
         position: relative;
@@ -470,6 +484,11 @@ input[type=number] {
     .c- {
         &bluewrapper {
             display: none;
+        }
+    }
+    .c- {
+        &card-badge {
+            height: unset;
         }
     }
 }
@@ -745,6 +764,8 @@ input[type=number] {
     .c-card--wider {
         padding: 25px;
         min-height: unset;
+        height: unset;
+        margin-bottom: 20px;
     }
     .c-slider-fullw {
         padding-right: 10px;
