@@ -21,33 +21,3 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header class="c-header">
-    <div class="container">
-        <div class="c-header__dekstop">
-            <div class="c-header__logo">
-                <a href="<?php echo home_url( '/' ); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="alterra bills logo">
-                </a>
-            </div>
-            <div class="c-header__nav">
-            </div>
-        </div>
-        <div class="c-header__mobile">
-            <div class="c-header__wrapper" id="js-sidebar-trigger-effects">
-                <button data-effect="js-sidebar-effect" class="c-header__burger js-burger-menu"></button>
-                <div class="c-header__logo">
-                    <a href="<?php echo home_url( '/' ); ?>">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo.svg" alt="alterra bills logo">
-                    </a>
-                </div>
-            </div>
-            <div class="c-header__right">
-                
-            </div>
-        </div>
-    </div>
-</header>
-
-<?php $cls = is_front_page() ? '' : '--single'; ?>
-
-<div class="u-nav-helper<?php echo $cls ?>"></div>

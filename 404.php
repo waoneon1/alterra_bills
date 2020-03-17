@@ -7,7 +7,7 @@
  * @package alterra_bill
  */
 
-get_header('empty');
+get_header('empty2');
 ?>
 
 	<!-- section header -->

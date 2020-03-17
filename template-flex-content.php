@@ -1,10 +1,12 @@
-<?php 
 
+<?php 
 /* Template Name: Flexible Content */ 
 
-get_header();
-
-
+if (get_field('header_footer')['header_visibility']) {
+    get_header();
+} else {
+    get_header('empty');
+}
 ?>
 
 <?php  include get_template_directory() . '/flexible-content/flex-function.php'; ?>
@@ -17,4 +19,9 @@ get_header();
  </script>
 
 <?php
-get_footer();
+
+if (get_field('header_footer')['footer_visibility']) {
+    get_footer();
+} else {
+    get_footer('empty');
+}

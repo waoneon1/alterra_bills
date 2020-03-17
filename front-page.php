@@ -16,7 +16,7 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/heading.svg" alt="heading">
+                <div class="js-heading"></div>
             </div>
             <div class="col-md-6">
                 <div class="c-heading__wrapper u-mt-50 js-scrollto">
@@ -371,6 +371,15 @@ get_header();
             } else {
                 $(this).text('Show More');
             }
+        });
+
+        // HEADING Lottie
+        bodymovin.loadAnimation({
+            container: document.querySelector('.js-heading'), // the dom element that will contain the animation
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: altp_burger_data + 'homepage.json'
         });
 
         // MODAL

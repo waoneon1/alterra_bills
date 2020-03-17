@@ -1425,6 +1425,61 @@
             "button_label": "Add Section",
             "min": "",
             "max": ""
+        },
+        {
+            "key": "field_5e709d58f7da6",
+            "label": "Header & Footer Setting",
+            "name": "header_footer",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5e709e8cf7da8",
+                    "label": "Header Visibility",
+                    "name": "header_visibility",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Show",
+                    "ui_off_text": "Hide"
+                },
+                {
+                    "key": "field_5e709e38f7da7",
+                    "label": "Footer Visibility",
+                    "name": "footer_visibility",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Show",
+                    "ui_off_text": "Hide"
+                }
+            ]
         }
     ],
     "location": [
@@ -1457,5 +1512,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1583909665
+    "modified": 1584442307
 }
