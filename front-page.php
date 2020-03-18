@@ -40,7 +40,7 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-6 pr-5">
-                <h2><?php echo $why['title'] ?></h2>
+                <h2 class="u-mb-35"><?php echo $why['title'] ?></h2>
                 <?php if($why['description']) : ?>
                     <p class="lead u-color-primary u-text-clamp mb-5"><?php echo $why['description'] ?></p>
                 <?php endif; ?>
