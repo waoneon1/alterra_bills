@@ -2,14 +2,14 @@
     $class = "c-content u-section";
     $class .= " flex-section-" . $section['acf_fc_layout'];
 ?>
-<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $key ?>">
+<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $fkey ?>">
     <div class="container">
         <div class="text-center u-mb-50">
             <img src="<?php echo get_template_directory_uri() ?>/assets/img/quote.svg" alt="">
         </div>
         <h2 class="text-center"><?php echo $section['title'] ?></h2>
         <p class="c-heading text-center u-color-primary"><?php echo $section['description'] ?></p>
-        <div class="c-card-quotes__wrapper js-slider-quotes">
+        <div class="c-card-quotes__wrapper js-slider-quotes<?php echo $fkey ?>">
             <?php foreach ($section['slider'] as $key => $item): ?>
                 <div class="c-card-quotes__col">
                     <div class="c-card-quotes rounded">
@@ -33,11 +33,11 @@
         </div>
 
         <div class="c-card-quotes__arrow d-flex justify-content-center align-items-center mx-auto">
-            <a href="" class="c-card-quotes__arrow-prev js-slider-quotes-prev">
+            <a href="" class="c-card-quotes__arrow-prev js-slider-quotes-prev<?php echo $fkey ?>">
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
             </a>
-            <div class="c-card-quotes__dots js-slider-dots"></div>
-            <a href="" class="c-card-quotes__arrow-next js-slider-quotes-next">
+            <div class="c-card-quotes__dots js-slider-dots<?php echo $fkey ?>"></div>
+            <a href="" class="c-card-quotes__arrow-next js-slider-quotes-next<?php echo $fkey ?>">
                 <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
             </a>
         </div>
@@ -47,7 +47,7 @@
 <script>
 // TESTIMONIAL slider
 jQuery(document).ready(function ($) {
-    $('.js-slider-quotes').slick({
+    $('.js-slider-quotes<?php echo $fkey ?>').slick({
         dots: true,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -55,9 +55,9 @@ jQuery(document).ready(function ($) {
         speed: 300,
         touchThreshold: 20,
         adaptiveHeight: true,
-        nextArrow: $('.js-slider-quotes-next'),
-        prevArrow: $('.js-slider-quotes-prev'),
-        appendDots: $('.js-slider-dots'),
+        nextArrow: $('.js-slider-quotes-next<?php echo $fkey ?>'),
+        prevArrow: $('.js-slider-quotes-prev<?php echo $fkey ?>'),
+        appendDots: $('.js-slider-dots<?php echo $fkey ?>'),
         responsive: [
             {
                 breakpoint: 768,

@@ -3,7 +3,7 @@
     $class = "c-content u-section";
     $class .= " flex-section-" . $section['acf_fc_layout'];
 ?>
-<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $key ?>">
+<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $fkey ?>">
     <div class="container">
 
         <div class="row">

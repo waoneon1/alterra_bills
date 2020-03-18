@@ -2,7 +2,7 @@
     $class = "c-content u-section";
     $class .= " flex-section-" . $section['acf_fc_layout'];
 ?>
-<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $key ?>">
+<section class="<?php echo $class . ' ' . $section_class ?>" id="flex-section-<?php echo $fkey ?>">
     <div class="container">
         <h2 class="text-center space[ u-mb-60 u-mb-25@sm ]"><?php echo $section['title'] ?></h2>
         <?php if ($section['description']): ?>
@@ -11,11 +11,11 @@
        
         <?php if ($section['slider']): ?>
             <div class="c-card-slider2__wrapper">
-                <a href="" class="c-slider2__arrow-prev js-slider-fullw-prev">
+                <a href="" class="c-slider2__arrow-prev js-slider-fullw-prev<?php echo $fkey ?>">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
                 </a>
                 <!-- js-slider-fullw  -->
-                <div class="js-slider-fullw c-card-slider2__holder c-card-slider2 overflow-hidden">
+                <div class="js-slider-fullw<?php echo $fkey ?> c-card-slider2__holder c-card-slider2 overflow-hidden">
                     <?php foreach ($section['slider'] as $key => $item ): ?>
                         <div class="d-flex align-items-start">
                             <img src="<?php echo $item['image']['sizes']['bill_praktik'] ?>" 
@@ -31,7 +31,7 @@
                     <?php endforeach ?>
                 </div>
 
-                <a href="" class="c-slider2__arrow-next js-slider-fullw-next">
+                <a href="" class="c-slider2__arrow-next js-slider-fullw-next<?php echo $fkey ?>">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/icons/arrow.svg" alt="" class="svg">
                 </a>
                 <!-- <div class="c-slider__dots c-slider-fullw__dots js-slider-dots"></div> -->       
@@ -44,14 +44,14 @@
 <script>
 jQuery(document).ready(function ($) {
     
-    $('.js-slider-fullw').slick({
+    $('.js-slider-fullw<?php echo $fkey ?>').slick({
         dots: false,
         infinite: false,
         speed: 300,
         slidesToShow: 1,
         touchThreshold: 20,
-        nextArrow: $('.js-slider-fullw-next'),
-        prevArrow: $('.js-slider-fullw-prev')
+        nextArrow: $('.js-slider-fullw-next<?php echo $fkey ?>'),
+        prevArrow: $('.js-slider-fullw-prev<?php echo $fkey ?>')
     });
 });
 </script>
