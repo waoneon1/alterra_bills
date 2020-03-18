@@ -217,7 +217,7 @@ get_header();
                                         srcset="<?php echo $item['image']['url'] ?> 2x" 
                                         alt="<?php echo $item['image']['alt'] ?>" 
                                         class="c-tab__image"
-                                        style="">
+                                        style="border-radius: 10px;">
                                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/doted.svg" 
                                         alt="doted"
                                         class="c-tab__doted">
@@ -288,7 +288,7 @@ get_header();
                 <div class="c-card">
                     <div class="c-card__upper">
                         <img src="<?php echo $item['image']['sizes']['bill_testi'] ?>" 
-                        srcset="<?php echo $item['image']['url'] ?> 2x" 
+                        srcset="<?php echo $item['image']['sizes']['bill_testi@2x'] ?> 2x" 
                         alt="<?php echo $item['image']['alt'] ?>" 
                         class="c-card__image-round">
 
