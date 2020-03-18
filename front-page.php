@@ -330,6 +330,23 @@ get_header();
     </div>
 </section>
 
+<!-- The Modal Monster -->
+<div class="ch-c-modal ch-c-modal--overlay js-modal-success">
+	<!-- Modal content -->
+	<div class="ch-c-modal__content ch-c-modal__vid--fluid js-modal-content">
+		<ul class="ch-c-slider">
+			<li class="ch-c-slider__items">
+				<div class="ch-c-modal__wrapper ch-c-modal__wrapper--center-content">
+					<span>Email Telah Terkirim</span>
+					<p>Terimakasih, kami telah menerima email Anda. Kami akan membalasnya dengan cepat</p>
+					<a href class="c-btn c-btn__hulk js-modal-close">
+						Kembali
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 
 
 <?php  include get_template_directory() . '/template-parts/modal-contactus.php'; ?>
@@ -395,6 +412,15 @@ get_header();
         }
         $.toastShow();
 
+        // 
+        popup_monster();
+        function popup_monster() {
+            var hash = window.location.href.split('#')[1];
+            if (hash == 'from_fb_ads_testing') {
+                $('.js-modal-success').show();
+                window.location.hash = '';
+            }
+        }
 
         
     });
