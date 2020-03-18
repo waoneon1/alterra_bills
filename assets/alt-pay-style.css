@@ -519,7 +519,7 @@ input[type=number] {
   border-radius: 0 0 10px 10px;
 }
 .c-tab .c-tab__title {
-  font-family: "SFCompactDisplay", sans-serif;
+  font-family: "SFCompactDisplay-Regular", sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
@@ -726,19 +726,19 @@ input[type=number] {
 =================================================== */
 @font-face {
   font-family: 'SFCompactDisplay-Regular';
-  src: url('../assets/fonts/SFCompactDisplay-Regular.ttf') format('truetype');
+  src: url('fonts/SFCompactDisplay-Regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'SFCompactDisplay-SemiBold';
-  src: url('../assets/fonts/SFCompactDisplay-Semibold.ttf') format('truetype');
+  src: url('fonts/SFCompactDisplay-Semibold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Muli-Bold';
-  src: url('../assets/fonts/Muli-Bold.ttf') format('truetype');
+  src: url('fonts/Muli-Bold.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Muli-ExtraBold';
-  src: url('../assets/fonts/Muli-Bold.ttf') format('truetype');
+  src: url('fonts/Muli-Bold.ttf') format('truetype');
 }
 body {
   color: #19345E;
@@ -812,7 +812,7 @@ p.lead {
   font-weight: 400;
 }
 .c-typhography {
-  font-family: 'SFCompactDisplay', sans-serif;
+  font-family: 'SFCompactDisplay-Regular', sans-serif;
   color: #4B4B4B;
 }
 .c-typhography li {
@@ -857,7 +857,7 @@ p.lead {
 .c-typhography ol li,
 .c-typhography ul li {
   line-height: 2em;
-  font-family: 'SFCompactDisplay', sans-serif;
+  font-family: 'SFCompactDisplay-Regular', sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
@@ -1225,7 +1225,7 @@ p.lead {
   margin-left: 20px;
 }
 .c-header__nav ul li {
-  font-family: Muli, sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: 15px;
   padding: 0 25px;
   color: #363636;
