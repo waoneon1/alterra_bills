@@ -7,7 +7,7 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-md-6 col-12">
+            <div class="col-12">
                 <?php if($section['title']) : ?>
                     <h2><?php echo $section['title'] ?></h2>     
                 <?php endif; ?>
@@ -16,8 +16,8 @@
                     <p class="u-color-primary"><?php echo $section['description'] ?></p>
                 <?php endif; ?>
             </div>
-            <div class="col-md-6 col-12">
-                <div class="wp_plugin_wpform">
+            <div class="col-12">
+                <div class="wp_plugin_wpform" style="max-width:700px">
                     <?php echo do_shortcode($section['shortcode']); ?>
                 </div>
             </div>
