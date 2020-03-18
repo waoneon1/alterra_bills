@@ -48,7 +48,7 @@ get_header();
                     <div class="d-flex align-items-start">
                         <img src="<?php echo get_template_directory_uri() . '/assets/img/' . $item['image'] . '.svg'?>" 
                         alt="<?php echo $item['image'] ?>" 
-                        style="">
+                        style="width:70px; height:70px;">
                         <div class="ml-2">
                             <h4><?php echo $item['title'] ?></h4>
                             <p class="mt-1 mb-5"><?php echo $item['description'] ?></p>
@@ -84,13 +84,13 @@ get_header();
 <?php $start = get_field('start_alterra_bills') ?>
 <section class="c-content u-section c-card-number u-bg-lightblue" id="start">
     <div class="container">
-        <h2 class="text-center space[ u-mb-75 u-mb-10@sm ]"><?php echo $start['title'] ?></h2>
+        <h2 class="text-center space[ u-mb-75 u-mb-35@sm ]"><?php echo $start['title'] ?></h2>
         <div class="row">
             <?php foreach ($start['items'] as $key => $item): ?>
                 <div class="col-md-4">
                     <div class="c-card-number__wrapper position-relative d-flex align-items-end text-center p-4 mb-4" style="height: 370px;">
                         <div class="c-card-number__count"><?php echo $count = $key + 1 ?></div>
-                        <div>
+                        <div class="mx-auto">
                             <img src="<?php echo get_template_directory_uri() . '/assets/img/easy' . $key . '.svg'?>" 
                                 alt="<?php echo title2slug($item['title']) ?>" 
                                 class="mb-3">   
@@ -147,10 +147,9 @@ get_header();
             <div class="col-md-6">
                 <div class="c-card c-card--wider c-card--hover">
                     <div class="c-card__upper">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/api.png" 
-                        srcset="<?php echo get_template_directory_uri() ?>/assets/img/api@2x.png 2x" 
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/api.svg"
                         alt="api">
-                        <div class="c-card__head">
+                        <div class="u-ml-25">
                             <h3><?php echo $api['api']['title'] ?></h3>
                         </div>
                     </div>
@@ -162,10 +161,9 @@ get_header();
             <div class="col-md-6">
                 <div class="c-card c-card--wider c-card--hover">
                     <div class="c-card__upper">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/nonapi.png" 
-                        srcset="<?php echo get_template_directory_uri() ?>/assets/img/nonapi@2x.png 2x" 
+                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/nonapi.svg"
                         alt="nonapi">
-                        <div class="c-card__head">
+                        <div class="u-ml-25">
                             <h3><?php echo $api['non_api']['title'] ?></h3>
                         </div>
                     </div>
