@@ -26,7 +26,7 @@ get_header();
                     <?php endif; ?>
                     <?php if ($heading['connect_with_us']): ?>
                         <a class="c-btn c-btn__primary" href="#start">
-                            Connect with Us
+                            I'm Interested
                         </a>
                     <?php endif ?>
                 </div>
