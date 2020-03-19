@@ -19,7 +19,7 @@ get_header();
                 <div class="js-heading"></div>
             </div>
             <div class="col-md-6">
-                <div class="c-heading__wrapper u-mt-50 js-scrollto">
+                <div class="c-heading__wrapper u-mt-50 u-mt-0@sm js-scrollto">
                     <h1><?php echo $heading['title'] ?></h1>
                     <?php if($heading['description']) : ?>
                         <p class="lead u-color-primary"><?php echo $heading['description'] ?></p>
@@ -258,6 +258,7 @@ get_header();
     </div>
 </section>
 
+<?php if(1==2) : ?>
 <?php $testi = get_field('testimonials') ?>
 <section class="c-content u-section u-mb-35 u-mb-0@sm overflow-hidden" id="testi">
     <div class="container position-relative">
@@ -306,7 +307,7 @@ get_header();
 
     </div>
 </section>
-
+<?php endif; ?>
 
 <?php $connect = get_field('connect_us') ?>
 <section class="c-textbg u-bg-lightblue u-section pb-0" id="contactus">
