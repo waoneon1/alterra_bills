@@ -105,7 +105,7 @@ get_header();
         </div>
         <?php if($start['button']) : ?>
            <div class="text-center">
-                <a  href="<?php echo $start['button']['url'] ?>" class="c-btn c-btn__primary">
+                <a  href="<?php echo $start['button']['url'] ?>" class="c-btn c-btn__primary" target="_blank">
                     <?php echo $start['button']['text'] ?>
                 </a>
            </div>
@@ -118,10 +118,10 @@ get_header();
     <div class="container">
         <h2 class="text-center space[ u-mb-75 u-mb-10@sm ]"><?php echo $what['title'] ?></h2>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <img class="u-mb-35@sm u-mt-35@sm" src="<?php echo get_template_directory_uri() ?>/assets/img/get.svg" alt="what do you get">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <?php foreach ($what['items'] as $key => $item): ?>
                     <div class="d-flex align-items-start position-relative">
                         <div class="u-numbering">0<?php echo $numbering = $key + 1 ?></div>
