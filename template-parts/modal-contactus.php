@@ -17,10 +17,14 @@
     <section class="c-content l-container-small mx-auto u-section">
         <div class="container">
             <h2 class="text-center space[ u-mb-35 u-mb-10@sm ]">
-                Tell Us Your Problem & We Will Be There to Help 
+                <?php echo get_field('title', 'option') 
+                ? get_field('title', 'option')
+                : 'How Can We Help You?'  ?>
             </h2>
             <p class="text-center space[ u-mb-35 ] u-color-primary">
-                Silakan hubungi kami melalui kolom di bawah ini untuk partanyaan seputar Alterra Bills.
+                <?php echo get_field('description', 'option') 
+                ? get_field('description', 'option')
+                : 'Silakan hubungi kami melalui kolom di bawah ini untuk pertanyaan seputar Alterra Bills.'  ?>
             </p>
 
             <div class="wp_plugin_wpform">

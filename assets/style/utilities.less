@@ -43,6 +43,9 @@
         line-height: 45px;
         color: #E2E2E2;
     }
+    &hide-desktop {
+        display: none;
+    }
 }
 
 // MARGIN
@@ -126,6 +129,11 @@
 @media (max-width: 1199px) {}
 @media (max-width: 991px) {}
 @media (max-width: 767px) {
+    .u- {
+        &hide-mobile {
+            display: none;
+        }
+    }
     .u-section {
         padding-top: 30px;
         padding-bottom: 30px;

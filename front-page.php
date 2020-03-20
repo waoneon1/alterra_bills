@@ -60,7 +60,7 @@ get_header();
                 <img src="<?php echo $why['image']['sizes']['bill_why_choose'] ?>" 
                     srcset="<?php echo $why['image']['url'] ?> 2x" 
                     alt="<?php echo $why['image']['alt'] ?>" 
-                    class="u-shadow-one"
+                    class="u-shadow-one u-hide-mobile"
                     style="">
             </div>
         </div>

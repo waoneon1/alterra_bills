@@ -541,6 +541,9 @@ input[type=number] {
   background-color: #f3f7fc;
 }
 @media (max-width: 767px) {
+  .c-tab .why_choose_us_image {
+    display: none;
+  }
   .c-tab .c-tab__nav-item {
     padding: 0 2px;
   }
@@ -970,6 +973,9 @@ p.lead {
   line-height: 45px;
   color: #E2E2E2;
 }
+.u-hide-desktop {
+  display: none;
+}
 .u-mt-10 {
   margin-top: 10px;
 }
@@ -1119,6 +1125,9 @@ p.lead {
   box-shadow: 0 10px 40px 0 rgba(89, 107, 119, 0.22);
 }
 @media (max-width: 767px) {
+  .u-hide-mobile {
+    display: none;
+  }
   .u-section {
     padding-top: 30px;
     padding-bottom: 30px;
