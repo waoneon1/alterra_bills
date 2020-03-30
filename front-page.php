@@ -118,8 +118,9 @@ get_header();
     <div class="container">
         <h2 class="text-center space[ u-mb-75 u-mb-10@sm ]"><?php echo $what['title'] ?></h2>
         <div class="row">
-            <div class="col-md-5">
-                <img class="u-mb-35@sm u-mt-35@sm" src="<?php echo get_template_directory_uri() ?>/assets/img/get.svg" alt="what do you get">
+            <div class="col-md-5 text-center">
+                <img class="u-mb-35@sm u-mt-35@sm what_get_image" src="<?php echo get_template_directory_uri() ?>/assets/img/get.svg" 
+                alt="what do you get"> 
             </div>
             <div class="col-md-7">
                 <?php foreach ($what['items'] as $key => $item): ?>
